@@ -1,7 +1,7 @@
 /**
  * lib.js
  * version 0.1
- * simplified operations
+ * simplified operations for javascript
  */
 
 var lib = lib || {};
