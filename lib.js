@@ -4,7 +4,7 @@
  * simplified operations
  */
 
-var lib = {};
+var lib = lib || {};
 
 /**
  * template element cloning
@@ -138,4 +138,28 @@ lib.func.rp = function(str, obj) {
 
 lib.isFunction = function(obj) {
     return typeof obj === "function";
+}
+
+/**
+ * get property name for which its value matches
+ * @param {*} obj 
+ * @param {*} value 
+ */
+ lib.matchValue = function(obj, value) {
+    for (const property in obj) {
+        if(obj[property] == value) {
+            return property;
+        }
+    }
+};
+
+/**
+ * find item in array on property and value
+ * @param {*} arr 
+ * @param {*} property 
+ * @param {*} value 
+ * @returns 
+ */
+lib.find = function(arr, property, value) {
+    return arr.find(item => item[property] == value);
 }
